@@ -8,7 +8,7 @@ mog = cv2.createBackgroundSubtractorMOG2()
 # 获取卷积核
 kernel1 = cv2.getStructuringElement(cv2.MORPH_RECT, (3, 3))
 kernel2 = cv2.getStructuringElement(cv2.MORPH_RECT, (6, 6))
-
+car = 0
 while True:
     flag, frame = cap.read()
 
@@ -39,8 +39,10 @@ while True:
             x, y, w, h = cv2.boundingRect(contour)
             if w >= 40 and h >= 40:
                 cv2.rectangle(frame, (int(x), int(y)), (int(x + w), int(y + h)), color=(0, 0, 255), thickness=2)
-        cv2.line(frame, (0, 450), (1000, 450), (0, 255, 0), thickness=2)
-        # if y//2<=450 or y//2>=450
+                cv2.line(frame, (0, 450), (1000, 450), (0, 255, 0), thickness=2)
+                if y <= 451 and y >= 449:
+                    car += 1
+        cv2.putText(frame, "car:" + str(car), (350, 450), cv2.FONT_HERSHEY_SIMPLEX, 2, (255, 0, 0), thickness=5)
         cv2.imshow("cap", frame)
     key = cv2.waitKey(1000 // 40)
     if key == 27:
