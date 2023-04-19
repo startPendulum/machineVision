@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 #  算子主要用作边缘检测
-img = cv2.resize(cv2.imread("../img/people.jpg"), (450, 600))
+img = cv2.resize(cv2.imread("../img/people1.jpg"), (450, 600))
 # sobel算子要分别计算x,y的梯度
 # 计算x轴方向的梯度
 dx = cv2.Sobel(img, cv2.CV_64F, dx=1, dy=0, ksize=5)

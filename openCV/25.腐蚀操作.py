@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-img = cv2.resize(cv2.imread("../img/people.jpg"), (450, 600))
+img = cv2.resize(cv2.imread("../img/people1.jpg"), (450, 600))
 
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
