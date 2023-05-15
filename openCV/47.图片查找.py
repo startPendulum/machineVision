@@ -1,8 +1,13 @@
 import cv2
 import numpy as np
 
-img1 = cv2.resize(cv2.imread("../img/book.jpg"), (450, 600))
-img2 = cv2.resize(cv2.imread("../img/number.png"), (450, 600))
+
+img1=cv2.imread("../img/4.png")
+
+img2=cv2.imread("../img/left.png")
+# img2=cv2.resize(cv2.imread("../img/left.png"),(300,300))
+
+cv2.imshow("left",img2)
 
 gray1 = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
 gray2 = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY)
